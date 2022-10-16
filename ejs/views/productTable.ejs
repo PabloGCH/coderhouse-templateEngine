@@ -1,0 +1,23 @@
+<% if(data.products.length != 0) {%>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% data.products.forEach(el => {%>
+				<tr>
+					<td><%- el.name%></td>
+					<td><%- el.price%></td>
+				</tr>
+			<% })%>
+		</tbody>
+
+	</table>
+<% } %>
+
+<% if(data.products == 0) {%>
+	<p>No products available</p>
+<% } %>
