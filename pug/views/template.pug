@@ -1,0 +1,13 @@
+html
+	head
+	body
+		nav
+			p
+				a(href="products") PRODUCTS
+			p
+				a(href="form") FORM
+		if data.productTable
+			include products.pug
+		if data.form
+			include form.pug
+		

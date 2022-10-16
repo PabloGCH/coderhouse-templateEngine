@@ -15,14 +15,8 @@ const products = [];
 APP.use(express.json());
 APP.use(express.urlencoded({extended: true}));
 
-/*
-APP.engine("handlebars", HANDLEBARS.engine())
-
-
-APP.set("views", VIEWFOLDER)
-
-APP.set("view engine", "handlebars")
-*/
+APP.set("views", VIEWFOLDER);
+APP.set("view engine", "pug")
 
 
 APP.get("/", (req, res) => {
@@ -30,17 +24,22 @@ APP.get("/", (req, res) => {
 })
 
 APP.get("/products", (req, res) => {
-	/*
-	res.render("products", {
-		products: products
-	});
-	*/
+	let data = {
+		data: {
+			productTable: true,
+			products: products
+		}
+	}
+	res.render("template", data);
 })
 
 APP.get("/form", (req, res) => {
-	/*
-	res.render("form");
-	*/
+	let data = {
+		data: {
+			form: true
+		}
+	}
+	res.render("template", data);
 })
 
 APP.post("/products", (req, res) => {

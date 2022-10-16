@@ -1,0 +1,14 @@
+
+if data.products.length > 0
+	table
+		thead
+			tr
+				th="Name"
+				th="Price"
+		tbody
+			each val in data.products
+				tr
+					td=val.name
+					td=val.price
+else
+	p="No products available"
