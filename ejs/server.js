@@ -28,7 +28,7 @@ APP.set("view engine", "ejs");
 
 
 APP.get("/", (req, res) => {
-	res.render("template")
+	res.redirect("products")
 })
 
 APP.get("/products", (req, res) => {
