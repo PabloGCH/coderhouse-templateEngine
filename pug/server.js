@@ -10,9 +10,6 @@ const VIEWFOLDER = path.join(__dirname, "views")
 const container = new Container("../products.json")
 
 
-
-let products = [];
-
 APP.use(express.json());
 APP.use(express.urlencoded({extended: true}));
 APP.use(express.static(path.join(__dirname, 'public')));
@@ -25,7 +22,6 @@ APP.get("/", (req, res) => {
 })
 
 APP.get("/products", (req, res) => {
-	products = [];
 	container.getAll().then(p => {
 		let data = {
 			data: {
