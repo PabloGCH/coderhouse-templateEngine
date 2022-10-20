@@ -1,9 +1,9 @@
-h2="Form"
+h2(class="mt-4")="Form"
 form(method="POST" action="./products")
-	label(for="name") name: 
-	input(type="text" name="name" id="name")  
-	label(for="price") price: 
-	input(type="text" name="price" id="price")  
-	label(for="imgUrl") img url: 
-	input(type="imgUrl" name="imgUrl" id="imgUrl")  
-	button(type="submit") Add Product
+	label(for="name" class="form-label mt-2") Name: 
+	input(type="text" name="name" class="form-control" id="name")  
+	label(for="price" class="form-label mt-2") Price: 
+	input(type="text" name="price" class="form-control" id="price")  
+	label(for="imgUrl" class="form-label mt-2") Img Url: 
+	input(type="imgUrl" name="imgUrl" class="form-control" id="imgUrl")  
+	button(type="submit" class="btn btn-primary mt-3") Add Product
