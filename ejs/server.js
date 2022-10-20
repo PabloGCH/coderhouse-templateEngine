@@ -1,27 +1,18 @@
 // IMPORTS
 const express = require("express");
 const path = require("path")
-
+const Container = require("../container.js")
 
 //GLOBAL VARIABLES
 const APP = express();
 const VIEWFOLDER = path.join(__dirname, "views")
+const container = new Container("../products.json")
 
-
-
-const products = [];
 
 APP.use(express.json());
 APP.use(express.urlencoded({extended: true}));
+APP.use(express.static(path.join(__dirname, 'public')));
 
-/*
-APP.engine("handlebars", HANDLEBARS.engine())
-
-
-APP.set("views", VIEWFOLDER)
-
-APP.set("view engine", "handlebars")
-*/
 
 APP.set("views", VIEWFOLDER)
 APP.set("view engine", "ejs");
@@ -32,13 +23,16 @@ APP.get("/", (req, res) => {
 })
 
 APP.get("/products", (req, res) => {
-	let data = {
-		data: {
-			productTable: true,
-			products: products
+	container.getAll().then(p => {
+		let data = {
+			data: {
+				productTable: true,
+				products: p
+			}
 		}
-	}
-	res.render("template", data);
+		res.render("template", data);
+	})
+
 })
 
 APP.get("/form", (req, res) => {
@@ -52,8 +46,10 @@ APP.get("/form", (req, res) => {
 
 APP.post("/products", (req, res) => {
 	let product = req.body;
-	products.push(product);
-	console.log(products);
+	Object.assign(product, {price: parseInt(product.price)})
+	container.save(product).then(ret => {
+		console.log(ret);
+	})
 	res.redirect("/products")
 })
 

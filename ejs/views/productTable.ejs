@@ -1,5 +1,6 @@
+<h2 class="mt-4">Products</h2>
 <% if(data.products.length != 0) {%>
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Name</th>
@@ -11,6 +12,9 @@
 				<tr>
 					<td><%- el.name%></td>
 					<td><%- el.price%></td>
+					<td>
+						<img src=<%- el.imgUrl%> class="table-img"></img>
+					</td>
 				</tr>
 			<% })%>
 		</tbody>

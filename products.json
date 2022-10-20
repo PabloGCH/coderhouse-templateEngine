@@ -1,5 +1,5 @@
 {
-	"lastId": 5,
+	"lastId": 6,
 	"products": [
 		{
 			"id": 1,
@@ -28,6 +28,12 @@
 			"id": 5,
 			"name": "dasd",
 			"price": 32,
+			"imgUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fskribeargentina.com%2Fwp-content%2Fuploads%2F2018%2F07%2FCompas-Fiddo.jpg&f=1&nofb=1&ipt=b7b5d2637a04904f9824d62962654586bcd5f05762a8181430cb6bef357a55d9&ipo=images"
+		},
+		{
+			"id": 6,
+			"name": "test",
+			"price": 3,
 			"imgUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fskribeargentina.com%2Fwp-content%2Fuploads%2F2018%2F07%2FCompas-Fiddo.jpg&f=1&nofb=1&ipt=b7b5d2637a04904f9824d62962654586bcd5f05762a8181430cb6bef357a55d9&ipo=images"
 		}
 	]

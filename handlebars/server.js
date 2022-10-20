@@ -7,7 +7,6 @@ const Container = require("../container.js")
 const APP = express();
 const VIEWFOLDER = path.join(__dirname, "views")
 const HANDLEBARS = require("express-handlebars");
-const products = [];
 const container = new Container("../products.json")
 
 APP.use(express.json());
