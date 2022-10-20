@@ -49,6 +49,7 @@ class Container {
 				} else {
 					throw "Price must be a number";
 				}
+				newObject.imgUrl = object.imgUrl;
 				file.products.push(newObject);
 				this.writeFile(file);
 			}

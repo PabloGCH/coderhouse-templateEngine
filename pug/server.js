@@ -51,7 +51,7 @@ APP.post("/products", (req, res) => {
 	let product = req.body;
 	Object.assign(product, {price: parseInt(product.price)})
 	container.save(product).then(ret => {
-		console.log(ret)
+		console.log(ret);
 	})
 	res.redirect("/products");
 })
